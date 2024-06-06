@@ -1,0 +1,115 @@
+.page {
+  padding: 0 24px;
+  padding-bottom: 24px;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 8dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 24px;
+}
+
+.back-button:hover {
+  cursor: pointer;
+}
+
+.content {
+  width: 1200px;
+  max-width: 90%;
+  max-height: calc(100dvh - 8dvh);
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  gap: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.content .data,
+.content .image {
+  flex: 1;
+  background: var(--background-color);
+  overflow: hidden;
+}
+
+.content .image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.content .data {
+  padding: 24px;
+}
+
+.food-menu {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sm);
+}
+
+.food-title {
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.food-categories {
+  margin-bottom: 24px;
+  color: var(--dark-grey);
+}
+.food-recipe {
+  white-space: pre-line;
+  max-height: 50%;
+  overflow: auto;
+}
+
+@media (max-width: 900px) {
+  .page {
+    height: auto;
+    padding: 0;
+    height: auto;
+  }
+  .header {
+    position: absolute;
+    padding: 24px;
+    width: 100%;
+    height: max-content;
+  }
+  .content {
+    max-width: 100%;
+    max-height: none;
+    flex-direction: column;
+    overflow: auto;
+    box-shadow: none;
+    gap: 4px;
+    border-radius: 0;
+  }
+  .content .image {
+    max-height: 600px;
+  }
+  .food-menu {
+    margin-bottom: 8px;
+  }
+
+  .back-button {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-color);
+    border-radius: 100%;
+  }
+}

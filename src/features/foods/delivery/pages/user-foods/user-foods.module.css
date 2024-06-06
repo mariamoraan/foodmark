@@ -1,0 +1,76 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.foods-list {
+  padding: 24px;
+  width: max-content;
+  display: grid;
+  align-self: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 24px;
+  list-style: none;
+}
+
+.food-item {
+  height: 100%;
+}
+
+.food-item:nth-child(even) {
+  transform: translateY(25%);
+}
+
+.food-wrapper {
+  padding-top: 24px;
+  padding-left: 24px;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--primary-color-100);
+  border-radius: var(--border-radius);
+  transition: 500ms ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.food-name {
+  margin-bottom: 4px;
+  max-width: 80%;
+  flex: 1;
+  font-weight: 600;
+  color: black;
+  transition: 500ms ease;
+}
+
+.food-image {
+  align-self: flex-end;
+  width: calc(200px * 0.9);
+  height: calc(200px * 0.9);
+  object-fit: cover;
+  object-position: right;
+  border-radius: 100% 0 0 0;
+  transition: 500ms ease;
+}
+
+.food-wrapper:hover .food-name {
+  color: var(--primary-color-900);
+}
+
+.food-wrapper:hover .food-image {
+  border-radius: 8px 0 0 0;
+}
+
+@media (max-width: 600px) {
+  .food-wrapper {
+    width: 150px;
+  }
+  .food-image {
+    width: calc(150px * 0.9);
+    height: calc(150px * 0.9);
+  }
+}
